@@ -1,0 +1,16 @@
+@font-face {
+	font-family: "方正超粗黑简体";
+	src: url(../font/FZCCHJW.TTF);
+}
+@font-face {
+	font-family: "方正兰亭粗黑简体";
+	src: url(../font/FZLTCHJW.TTF);
+}
+@font-face {
+	font-family: "方正兰亭大黑简体";
+	src: url(../font/FZLTDHJW.TTF);
+}
+@font-face {
+	font-family: "方正兰亭黑_GBK";
+	src: url(../font/方正兰亭黑_GBK.TTF);
+}

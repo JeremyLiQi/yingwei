@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font.css"/>
+    <style>
+    *{margin: 0;padding: 0;font-family: "方正兰亭黑_GBK";}
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+    .bg{
+    	width: 100%;
+    	height: 100%;
+    }
+    .bg10{
+    	height: 50%;
+    	position: absolute;
+    	bottom: 0;
+    }
+    .nav{
+    	width: 100%;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    }
+    .nav>img{
+    	width: 100%;
+    }
+    .points{
+    	position: absolute;
+    	overflow: hidden;
+    	right: 3%;
+    	top: 40%;
+    }
+    .points img{
+    	float: left;
+    	width: 6px;
+    	margin-right: 10px;
+    }
+    .logo{
+    	width: 100%;
+    	position: absolute;
+    	bottom: 2%;
+    	text-align: center;
+    }
+    .logo img{
+    	width: 10%;
+    }
+    .music{
+    	width: 7%;
+    	position: absolute;
+    	bottom: 6%;
+    	right: 13%;
+    }
+    #text1{
+    	width: 100%;
+    	position: absolute;
+    	bottom: 15%;
+    	overflow: hidden;
+    }
+    #text1_1{
+    	float: left;
+    	width: 60%;
+    	overflow: hidden;
+    	margin: 0 3%;
+    	display: none;
+    }
+    #text1_1 p{
+    	width: 100%;
+    	float: left;
+    	font-family: "方正超粗黑简体";
+    	font-size: 55px;
+    	color: white;
+    }
+    #text1_1 #line_under{
+    	width: 60%;
+    	float: left;
+    }
+    #text1_2{
+    	width: 38%;
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+    	background-color: #E40014;
+    	display: none;
+    }
+    #text1_2 p{
+    	width: 90%;
+    	font-family: "方正兰亭粗黑简体";
+    	font-size: 30px;
+    	font-style: italic;
+    	color: white;
+    }
+    #car1{
+    	width: 40%;
+    	position: absolute;
+    	left: 0;
+    	bottom: 25%;
+    	display: none;
+    }
+    #page2 .content,#page3 .content,#page5 .content,#page6 .content,#page8 .content,#page10 .content{
+    	position: absolute;
+    	top: 13%;
+    	left: 5%;
+    }
+    #page8 .content{
+    	color: white;
+    }
+    #page9 .content{
+    	position: absolute;
+    	top: 20%;
+    	width: 100%;
+    	text-align: center;
+    	color: white;
+    }
+    #page4 .content,#page7 .content{
+    	text-align: right;
+    	position: absolute;
+    	top: 13%;
+    	right: 5%;
+    	color: white;
+    }
+    #page7 .content{
+    	color: black;
+    }
+    .content1{
+    	font-size: 12px;
+    	line-height: 20px;
+    	display: none;
+    }
+    .content2{
+    	display: none;
+    }
+    .content2 span:first-child{
+    	font-size: 25px;
+    	background: #E40014;
+    	color: white;
+    }
+    .content2 span:last-child{
+    	font-size: 12px;
+    }
+    #car2{
+    	width: 50%;
+    	position: absolute;
+    	bottom: 13%;
+    	right: 0;
+    	display: none;
+    }
+    #page10 .content1 span{
+    	color: white;
+    	background: #E40014;
+    	font-size: 14px;
+    	font-weight: bold;
+    	display: inline-block;
+    	margin-bottom: 10px;
+    }
+    #page10 .content2 li{
+    	width: 100%;
+    	background: url(img/jvxing.png) no-repeat left 3px;
+    	background-size: 3%;
+    	padding-left: 5%;
+    	list-style: none;
+    	font-size: 14px;
+    	margin-bottom: 4%;
+    }
+    #share{
+    	position: absolute;
+    	overflow: hidden;
+    	top: 12%;
+    	right: 5%;
+    	width: 100%;
+    }
+    #share #arrow{
+    	width: 10%;	
+    	float: right;
+    }
+    #share span{
+    	color: #515151;
+    	font-size: 13px;
+    	float: right;
+    	margin-top: 5px;
+    }
+    #video_name{
+    	position: absolute;
+    	top: 30%;
+    	width: 100%;
+    	text-align: center;
+    	color: #515151;
+    	font-size: 14px;
+    }
+    #movie{
+    	width: 100%;
+    	position: absolute;
+    	top: 40%;
+    }
+    #video{
+    	width: 100%;
+    }
+    #video_btn{
+    	position: absolute;
+    	width: 30%;
+    	top: 25%;
+    	left: 35%;
+    	cursor: pointer;
+    }
+    #watch{
+    	width: 100%;
+    	text-align: center;
+    	position: absolute;
+    	bottom: 10%;
+    	color: #515151;
+    	font-size: 12px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="page1">
+            	<img src="img/bg1.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            		<div class="points">
+	            		<img src="img/point.png"/>
+	            		<img src="img/point.png"/>
+	            		<img src="img/point.png"/>
+	            	</div>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png" class="animated infinite flash"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div id="text1">
+            		<div id="text1_1" class="animated slideInLeft">
+            			<p>探索爱</p>
+            			<img src="img/line_under.png" id="line_under"/>
+            		</div>
+            		<div id="text1_2" class="animated slideInRight">
+            			<p>不等待</p>
+            		</div>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page2">
+            	<img src="img/bg2.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<img src="img/car1.png" id="car1" class="animated slideInLeft"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">加速油门跑遍更多的地方</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2s;animation-delay : 2s;">穿过峡谷途径海洋，融入漫天繁星里</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2.5s;animation-delay : 2.5s;">追逐瞬间的彩虹，感知多变的云层</span>
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">触动</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">，在瞬息间</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page3">
+            	<img src="img/bg3.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">偶然的相遇不是偶然</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1s;animation-delay : 1s;">每一个独特都有另一个独特在等待</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">谁可以和你对一下密码</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2s;animation-delay : 2s;">即刻彼此开启</span>
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">激发</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">，无尽想象</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page4">
+            	<img src="img/bg4.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">没有说走就走的勇气，哪有不期而遇的奇迹</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2s;animation-delay : 2s;">追随心中所爱，哪里都是最好的风景</span><br />
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">唤醒</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">，每一感官</span>
+	            	</p>
+            	</div>
+            	<img src="img/car2.png" id="car2"  class="animated slideInRight"/>
+			</div>
+            <div class="swiper-slide" id="page5">
+            	<img src="img/bg5.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">会孤独会寂寞会彷徨无助</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1s;animation-delay : 1s;">还得坚强</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">会叛逆会反常会历经艰难</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2s;animation-delay : 2s;">还得勇敢</span>
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">挥洒</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">，自由心绪</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page6">
+            	<img src="img/bg6.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">一个眼神间，一个笑容里，信任与默契</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2s;animation-delay : 2s;">无论伟大还是渺小、出众或是平庸</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 2.5s;animation-delay : 2.5s;">坚信你的与众不同，彼此相依</span>
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">执领</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">，未知之路</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page7">
+            	<img src="img/bg7.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">身处异景或只是短暂的停留</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1s;animation-delay : 1s;">那一刻依然能够体会生活独有的乐趣</span>
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">相悦</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">，无声无息</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page8">
+            	<img src="img/bg8.png" class="bg"/>
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">可以和你一起进入生命的真相</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1s;animation-delay : 1s;">一起品味苦涩与心酸、一起感受欢喜</span><br />
+						<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">坚定的相互维护，欣赏彼此的独特</span>
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">分享</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">，无所不在</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page9">
+            	<img src="img/bg9.png"/ class="bg">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            		<div class="points">
+	            		<img src="img/point.png"/>
+	            		<img src="img/point.png"/>
+	            		<img src="img/point.png"/>
+	            	</div>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">探索不期而遇的奇迹，勇敢追随心中所爱</span><br />
+	            	</p>
+	            	<p class="content2">
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">敢爱</span>
+	            		<span class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">，一路前行</span>
+	            	</p>
+            	</div>
+			</div>
+            <div class="swiper-slide" id="page10">
+            	<img src="img/bg10.png"/ class="bg bg10">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div class="content">
+	            	<p class="content1 animated slideInRight" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">
+	            		<span>全新英菲尼迪QX50风尚智能四驱SUV</span>
+	            		<span>带给驾驭者全方位的勇敢支持</span>
+	            	</p>
+	            	<ul class="content2">
+	            		<li class="animated fadeIn" style="-webkit-animation-delay : 0.5s;animation-delay : 0.5s;">独具一格的流线型SUV设计理念</li>
+	            		<li class="animated fadeIn" style="-webkit-animation-delay : 1s;animation-delay : 1s;">同级唯一全系标配V6自然吸气发动机</li>
+	            		<li class="animated fadeIn" style="-webkit-animation-delay : 1.5s;animation-delay : 1.5s;">全系标配智能四驱系统</li>
+	            		<li class="animated fadeIn" style="-webkit-animation-delay : 2s;animation-delay : 2s;">2800mm同级最长轴距</li>
+	            		<li class="animated fadeIn" style="-webkit-animation-delay : 2.5s;animation-delay : 2.5s;">同级领先的安全科技——全景式监控<br />影像系统AVM</li>
+	            		<li class="animated fadeIn" style="-webkit-animation-delay : 3s;animation-delay : 3s;">4年/10万公里免费保修保养服务</li>
+	            	</ul>
+            	</div>
+			</div>
+			<div class="swiper-slide" id="page11">
+            	<div class="nav">
+   	         		<img src="img/nav.png"/>
+            	</div>
+            	<div class="logo">
+            		<img src="img/logo1.png"/>
+            	</div>
+            	<img src="img/music_play.png" class="music"/>
+            	<div id="share">
+            		<img src="img/arrow.png" id="arrow"/><br />
+            		<span>分享给好友</span>
+            	</div>
+            	<p id="video_name">周迅夫妇联袂演绎微电影《完美出逃》</p>
+            	<div id="movie">
+	            	<video id="video">  
+					    <source src="sound/销魂的线条！“英菲尼迪”超级概念跑车广告 视频-原创视频-搜狐视频_1.mp4" type="video/mp4">  
+					</video>
+            		<img src="img/play_btn.png" id="video_btn" class="animated infinite flash" style="-webkit-animation-duration: 2s;animation-duration: 2s;"/>
+            	</div>
+            	<p id="watch">点击观看视频</p>
+			</div>
+        </div>
+    </div>
+    <audio src="sound/龙卷风.mp3" autoplay loop id="player"></audio>
+</body>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script src="js/touch.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    var music = document.getElementsByClassName('music');
+    var logo = document.getElementsByClassName('logo');
+    var text1_1 = document.getElementById('text1_1');
+    var text1_2 = document.getElementById('text1_2');
+    var car1 = document.getElementById('car1');
+    var car2 = document.getElementById('car2');
+    var content1 = document.getElementsByClassName('content1');
+    var content2 = document.getElementsByClassName('content2');
+    var player = document.getElementById('player');
+    var video = document.getElementById('video');
+    var video_btn = document.getElementById('video_btn');
+    
+    var musicLogoTimer = null;
+    var deg = 0;
+    var play = true;
+    
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        onSlideChangeStart: function(swiper){
+        	original();
+        	for (var i = 0; i < logo.length; i++) {
+        		logo[i].getElementsByTagName('img')[0].className = '';
+        	}
+	      	logo[swiper.activeIndex].getElementsByTagName('img')[0].className = 'animated infinite flash';
+	      	
+	      	if (play) {
+	      		musicLogoRotate(swiper.activeIndex);
+	      	}
+	      	
+	      	switch(swiper.activeIndex){
+	      		case 0:
+		      		text1_1.style.display = 'block';
+		      		text1_2.style.display = 'block';
+	      		break;
+	      		case 1:
+	      			car1.style.display = 'block';
+	      		break;
+	      		case 3:
+	      			car2.style.display = 'block';
+	      		break;
+	      	}
+	      	if (swiper.activeIndex==10) {
+	      		return;
+	      	}
+	      	content1[swiper.activeIndex-1].style.display = 'block';
+	      	content2[swiper.activeIndex-1].style.display = 'block';
+	    }
+    });
+    	
+    	init();
+    	
+    	function original(){
+    		text1_1.style.display = 'none';
+	      	text1_2.style.display = 'none';
+	      	car1.style.display = 'none';
+	      	for (var i = 0; i < content1.length; i++) {
+	      		content1[i].style.display = 'none';
+	      		content2[i].style.display = 'none';
+	      	}
+	      	car2.style.display = 'none';
+    	}
+    	
+    	function init(){
+    		musicLogoRotate(swiper.activeIndex);
+    		text1_1.style.display = 'block';
+	      	text1_2.style.display = 'block';
+    	}
+    	
+    	function musicLogoRotate(index){
+    		if (musicLogoTimer) {
+    			clearInterval(musicLogoTimer);
+    		}
+    		musicLogoTimer = setInterval(function(){
+	    		deg+=10;
+	    		music[index].style.transform = 'rotate('+deg+'deg)';
+	    	},20);
+    	}
+    	
+    	for (var i = 0; i < music.length; i++) {
+    		
+    		touch.on(music[i],'touchstart',function(event){
+				if (play) {
+    				music_off();
+    			}else{
+	    			music_play();
+    			}
+			});
+			
+//  		music[i].onclick = function(){
+//  			if (play) {
+//  				music_off();
+//  			}else{
+//	    			music_play();
+//  			}
+//  		}
+    	}
+    	
+    	function music_off(){
+    		play = false;
+	    	player.pause();
+	    	for (var j = 0; j < music.length; j++) {
+	    		music[j].src = 'img/music_off.png';
+	    		music[j].style.transform = 'rotate(0deg)';
+	    	}
+	    	clearInterval(musicLogoTimer);
+    	}
+    	
+    	function music_play(){
+    		play = true;
+    		player.play();
+	    	for (var j = 0; j < music.length; j++) {
+	    		music[j].src = 'img/music_play.png';
+	    	}
+	    	musicLogoRotate(swiper.activeIndex);
+    	}
+    	
+    	touch.on(video_btn,'touchstart',function(event){
+			music_off();
+    		video_btn.style.display = 'none';
+    		video.play();
+		});
+		
+    	touch.on(video,'touchstart',function(event){
+			video.pause();
+    		video_btn.style.display = 'block';
+		});
+		
+		
+		
+    	video_btn.onclick = function(){
+    		music_off();
+    		video_btn.style.display = 'none';
+    		video.play();
+    	}
+      	
+    	video.onclick = function(){
+    		video.pause();
+    		video_btn.style.display = 'block';
+    	}
+    	
+    </script>
+</html>
